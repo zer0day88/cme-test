@@ -1,4 +1,8 @@
-### How to run this project on kubernetes (local using kind)
+### How to run this project on kubernetes (local using Kind)
+
+> Requirements :<br>
+> golang 1.21 , docker, kind, terraform, helm, kubectl
+
 1. Deploy kind, cassandra, redis, and nginx-ingress
 ```shell
 cd deploy-kind
@@ -137,11 +141,11 @@ message service : http://<public ip or localhost>/message/v1/send
    }
    ```
    
-> no unit test, if I have more time to do that I will use this one https://testcontainers.com/ for end-to-end testing 
+> no unit test, if I have more time to do that, <br> I will use this one https://testcontainers.com/ for end-to-end testing 
 
 ### Explanation
-This project has 2 services user and messaging service and infra on the local kubernetes
-I use redis only for login and refresh token, not in messaging services
-in real case / production grade the tech would be very different
-and the message could be cached using TTL on redis based on frequent request,
+This project has 2 services user and messaging service and infra on the local kubernetes <br>
+I use redis only for login and refresh token, not in messaging services <br>
+in real case / production grade the tech would be very different <br>
+and the message could be cached using TTL on redis based on frequent request, <br>
 more frequent the message requested and then more longer TTL
